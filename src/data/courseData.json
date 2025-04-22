@@ -1,0 +1,744 @@
+{
+  "courses": [
+    {
+      "slug": "desarrollo-web-completo",
+      "title": "Desarrollo Web Completo",
+      "instructor": "Juan Pérez",
+      "description": "Aprende HTML, CSS, JS, Node.js y más. Este curso te llevará desde los conceptos básicos hasta el desarrollo de aplicaciones web completas.",
+      "imageUrl": "https://placehold.co/600x400/3498db/ffffff?text=Web+Dev",
+      "progress": 33,
+      "totalLessons": 24,
+      "completedLessons": 8,
+      "duration": "12 semanas",
+      "level": "Intermedio",
+      "category": "Desarrollo Web",
+      "price": "$99.99",
+      "rating": 4.8,
+      "students": 1250,
+      "lastUpdated": "15 de Marzo, 2024",
+      "requirements": [
+        "Conocimientos básicos de informática",
+        "Computadora con acceso a internet",
+        "Editor de código (recomendamos VS Code)"
+      ],
+      "whatYouWillLearn": [
+        "Fundamentos de HTML5 y CSS3",
+        "JavaScript moderno (ES6+)",
+        "Node.js y Express.js",
+        "Bases de datos (MongoDB)",
+        "Desarrollo de APIs RESTful",
+        "Despliegue de aplicaciones"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Introducción",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Bienvenida y Visión General",
+              "status": "completado"
+            },
+            {
+              "title": "Conceptos Fundamentales",
+              "status": "completado"
+            },
+            {
+              "title": "Herramientas Necesarias",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Profundizando",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Técnicas Avanzadas Parte 1",
+              "status": "pendiente"
+            },
+            {
+              "title": "Ejercicios Prácticos",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Aplicaciones",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Desarrollo de Aplicaciones Web",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Integración con APIs",
+              "status": "bloqueado"
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Conclusiones",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Proyecto Final",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Despliegue y Mantenimiento",
+              "status": "bloqueado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "python-machine-learning",
+      "title": "Python para Machine Learning",
+      "instructor": "Ana Gómez",
+      "description": "Domina Python y las librerías clave para ML. Aprende a crear modelos predictivos y sistemas de recomendación.",
+      "imageUrl": "https://placehold.co/600x400/2ecc71/ffffff?text=Python+ML",
+      "progress": 0,
+      "totalLessons": 20,
+      "completedLessons": 0,
+      "duration": "10 semanas",
+      "level": "Intermedio",
+      "category": "Ciencia de Datos",
+      "price": "$129.99",
+      "rating": 4.9,
+      "students": 980,
+      "lastUpdated": "10 de Marzo, 2024",
+      "requirements": [
+        "Conocimientos básicos de Python",
+        "Fundamentos de estadística",
+        "Computadora con acceso a internet"
+      ],
+      "whatYouWillLearn": [
+        "Fundamentos de Machine Learning",
+        "Librerías principales (NumPy, Pandas, Scikit-learn)",
+        "Modelos de regresión y clasificación",
+        "Redes neuronales con TensorFlow",
+        "Procesamiento de datos",
+        "Evaluación de modelos"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Introducción a ML",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Conceptos básicos de ML",
+              "status": "pendiente"
+            },
+            {
+              "title": "Entorno de desarrollo",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Preparación de datos",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Limpieza de datos",
+              "status": "pendiente"
+            },
+            {
+              "title": "Feature engineering",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Modelos básicos",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Regresión lineal",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Clasificación",
+              "status": "bloqueado"
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Modelos avanzados",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Redes neuronales",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Deep Learning",
+              "status": "bloqueado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "diseno-ux-ui",
+      "title": "Diseño UX/UI Avanzado",
+      "instructor": "Carlos Ruiz",
+      "description": "Crea interfaces intuitivas y atractivas. Aprende los principios del diseño centrado en el usuario.",
+      "imageUrl": "https://placehold.co/600x400/9b59b6/ffffff?text=Diseño+UX",
+      "progress": 0,
+      "totalLessons": 18,
+      "completedLessons": 0,
+      "duration": "8 semanas",
+      "level": "Intermedio",
+      "category": "Diseño",
+      "price": "$89.99",
+      "rating": 4.7,
+      "students": 750,
+      "lastUpdated": "5 de Marzo, 2024",
+      "requirements": [
+        "Conocimientos básicos de diseño",
+        "Computadora con acceso a internet",
+        "Herramientas de diseño (Figma, Adobe XD)"
+      ],
+      "whatYouWillLearn": [
+        "Principios de UX/UI",
+        "Investigación de usuarios",
+        "Wireframing y prototipado",
+        "Diseño de interfaces",
+        "Pruebas de usabilidad",
+        "Herramientas de diseño"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Fundamentos",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Introducción a UX/UI",
+              "status": "pendiente"
+            },
+            {
+              "title": "Principios de diseño",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Investigación",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Métodos de investigación",
+              "status": "pendiente"
+            },
+            {
+              "title": "Análisis de usuarios",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Diseño",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Wireframing",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Prototipado",
+              "status": "bloqueado"
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Evaluación",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Pruebas de usabilidad",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Iteración y mejora",
+              "status": "bloqueado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "marketing-digital",
+      "title": "Marketing Digital Esencial",
+      "instructor": "Sofía Lara",
+      "description": "Estrategias SEO, SEM y Redes Sociales. Aprende a promocionar tu negocio en el mundo digital.",
+      "imageUrl": "https://placehold.co/600x400/f1c40f/ffffff?text=Marketing",
+      "progress": 0,
+      "totalLessons": 16,
+      "completedLessons": 0,
+      "duration": "6 semanas",
+      "level": "Principiante",
+      "category": "Marketing",
+      "price": "$79.99",
+      "rating": 4.6,
+      "students": 620,
+      "lastUpdated": "1 de Marzo, 2024",
+      "requirements": [
+        "Conocimientos básicos de marketing",
+        "Computadora con acceso a internet",
+        "Cuentas en redes sociales"
+      ],
+      "whatYouWillLearn": [
+        "Fundamentos de marketing digital",
+        "SEO y SEM",
+        "Marketing en redes sociales",
+        "Email marketing",
+        "Analítica web",
+        "Estrategias de contenido"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Introducción",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Conceptos básicos",
+              "status": "pendiente"
+            },
+            {
+              "title": "Plataformas digitales",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "SEO y SEM",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Optimización SEO",
+              "status": "pendiente"
+            },
+            {
+              "title": "Campañas SEM",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Redes Sociales",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Estrategias en redes",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Contenido viral",
+              "status": "bloqueado"
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Analítica",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Métricas clave",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Reportes y análisis",
+              "status": "bloqueado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "react-redux-avanzado",
+      "title": "React y Redux Avanzado",
+      "instructor": "Miguel Torres",
+      "description": "Desarrollo de aplicaciones web modernas con React.",
+      "imageUrl": "https://placehold.co/600x400/3498db/ffffff?text=React",
+      "progress": 0,
+      "totalLessons": 20,
+      "completedLessons": 0,
+      "duration": "10 semanas",
+      "level": "Avanzado",
+      "category": "Desarrollo Web",
+      "price": "$119.99",
+      "rating": 4.9,
+      "students": 890,
+      "lastUpdated": "20 de Marzo, 2024",
+      "requirements": [
+        "Conocimientos de JavaScript",
+        "Experiencia básica con React",
+        "Computadora con acceso a internet"
+      ],
+      "whatYouWillLearn": [
+        "React Hooks avanzados",
+        "Gestión de estado con Redux",
+        "Patrones de diseño en React",
+        "Optimización de rendimiento",
+        "Testing y debugging",
+        "Despliegue de aplicaciones"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "React Avanzado",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Hooks personalizados",
+              "status": "pendiente"
+            },
+            {
+              "title": "Context API",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Redux",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Fundamentos de Redux",
+              "status": "pendiente"
+            },
+            {
+              "title": "Redux Toolkit",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Patrones",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Patrones de diseño",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Arquitectura de aplicaciones",
+              "status": "bloqueado"
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Optimización",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Rendimiento",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Testing",
+              "status": "bloqueado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "analisis-datos-python",
+      "title": "Análisis de Datos con Python",
+      "instructor": "Laura Martínez",
+      "description": "Análisis y visualización de datos con Python.",
+      "imageUrl": "https://placehold.co/600x400/2ecc71/ffffff?text=Python",
+      "progress": 0,
+      "totalLessons": 16,
+      "completedLessons": 0,
+      "duration": "8 semanas",
+      "level": "Intermedio",
+      "category": "Ciencia de Datos",
+      "price": "$94.99",
+      "rating": 4.7,
+      "students": 720,
+      "lastUpdated": "18 de Marzo, 2024",
+      "requirements": [
+        "Conocimientos básicos de Python",
+        "Fundamentos de estadística",
+        "Computadora con acceso a internet"
+      ],
+      "whatYouWillLearn": [
+        "Pandas y NumPy",
+        "Visualización de datos",
+        "Análisis estadístico",
+        "Limpieza de datos",
+        "Reportes y dashboards",
+        "Automatización de análisis"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Fundamentos",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Introducción a Pandas",
+              "status": "pendiente"
+            },
+            {
+              "title": "Manipulación de datos",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Visualización",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Matplotlib y Seaborn",
+              "status": "pendiente"
+            },
+            {
+              "title": "Gráficos interactivos",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Análisis",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Estadística descriptiva",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Correlaciones",
+              "status": "bloqueado"
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Reportes",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Creación de dashboards",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Automatización",
+              "status": "bloqueado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "diseno-productos-digitales",
+      "title": "Diseño de Productos Digitales",
+      "instructor": "Roberto Sánchez",
+      "description": "Diseño de productos digitales centrados en el usuario.",
+      "imageUrl": "https://placehold.co/600x400/9b59b6/ffffff?text=Diseño",
+      "progress": 0,
+      "totalLessons": 18,
+      "completedLessons": 0,
+      "duration": "9 semanas",
+      "level": "Intermedio",
+      "category": "Diseño",
+      "price": "$109.99",
+      "rating": 4.8,
+      "students": 680,
+      "lastUpdated": "16 de Marzo, 2024",
+      "requirements": [
+        "Conocimientos básicos de diseño",
+        "Computadora con acceso a internet",
+        "Herramientas de diseño"
+      ],
+      "whatYouWillLearn": [
+        "Diseño centrado en el usuario",
+        "Investigación de usuarios",
+        "Prototipado y wireframing",
+        "Diseño de interfaces",
+        "Pruebas de usabilidad",
+        "Gestión de productos"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Fundamentos",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Introducción al diseño de productos",
+              "status": "pendiente"
+            },
+            {
+              "title": "Metodologías de diseño",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Investigación",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Investigación de usuarios",
+              "status": "pendiente"
+            },
+            {
+              "title": "Análisis de competencia",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Diseño",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Wireframing",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Prototipado",
+              "status": "bloqueado"
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Evaluación",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Pruebas de usabilidad",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Iteración",
+              "status": "bloqueado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "estrategias-contenido-digital",
+      "title": "Estrategias de Contenido Digital",
+      "instructor": "Carmen Rodríguez",
+      "description": "Creación y gestión de contenido para redes sociales.",
+      "imageUrl": "https://placehold.co/600x400/f1c40f/ffffff?text=Contenido",
+      "progress": 0,
+      "totalLessons": 14,
+      "completedLessons": 0,
+      "duration": "7 semanas",
+      "level": "Principiante",
+      "category": "Marketing",
+      "price": "$84.99",
+      "rating": 4.5,
+      "students": 550,
+      "lastUpdated": "14 de Marzo, 2024",
+      "requirements": [
+        "Conocimientos básicos de marketing",
+        "Computadora con acceso a internet",
+        "Cuentas en redes sociales"
+      ],
+      "whatYouWillLearn": [
+        "Creación de contenido",
+        "Estrategias para redes sociales",
+        "SEO y contenido",
+        "Email marketing",
+        "Analítica de contenido",
+        "Gestión de comunidades"
+      ],
+      "curriculum": [
+        {
+          "week": 1,
+          "title": "Fundamentos",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Introducción al contenido digital",
+              "status": "pendiente"
+            },
+            {
+              "title": "Tipos de contenido",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Redes Sociales",
+          "status": "disponible",
+          "lessons": [
+            {
+              "title": "Estrategias por plataforma",
+              "status": "pendiente"
+            },
+            {
+              "title": "Calendario editorial",
+              "status": "pendiente"
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "SEO",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "SEO para contenido",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Keywords y optimización",
+              "status": "bloqueado"
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Analítica",
+          "status": "bloqueado",
+          "lessons": [
+            {
+              "title": "Métricas de contenido",
+              "status": "bloqueado"
+            },
+            {
+              "title": "Reportes y análisis",
+              "status": "bloqueado"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

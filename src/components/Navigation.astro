@@ -1,0 +1,48 @@
+---
+interface Props {
+  isLoggedIn?: boolean;
+}
+
+const { isLoggedIn = true } = Astro.props;
+---
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold text-blue-600">EduPlat</a>
+    <div class="flex items-center space-x-4">
+      {
+        isLoggedIn ? (
+          <>
+            <a
+              href="/dashboard"
+              class="text-gray-600 hover:text-blue-600 font-semibold"
+            >
+              Dashboard
+            </a>
+            <a href="/cursos" class="text-gray-600 hover:text-blue-600">
+              Cursos
+            </a>
+            <button
+              type="button"
+              class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 text-sm"
+            >
+              Cerrar Sesión
+            </button>
+          </>
+        ) : (
+          <>
+            <a href="/login" class="text-gray-600 hover:text-blue-600">
+              Iniciar Sesión
+            </a>
+            <a
+              href="/register"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 text-sm"
+            >
+              Registrarse
+            </a>
+          </>
+        )
+      }
+    </div>
+  </nav>
+</header>

@@ -1,16 +1,396 @@
 ---
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import CourseCard from "../components/CourseCard.astro";
+import "../styles/global.css";
 
+const featuredCourses = [
+  {
+    title: "Desarrollo Web Completo",
+    instructor: "Juan Pérez",
+    description: "Aprende HTML, CSS, JS, Node.js y más.",
+    imageUrl: "https://placehold.co/600x400/3498db/ffffff?text=Web+Dev",
+    progress: 0,
+  },
+  {
+    title: "Python para Machine Learning",
+    instructor: "Ana Gómez",
+    description: "Domina Python y las librerías clave para ML.",
+    imageUrl: "https://placehold.co/600x400/2ecc71/ffffff?text=Python+ML",
+    progress: 0,
+  },
+  {
+    title: "Diseño UX/UI Avanzado",
+    instructor: "Carlos Ruiz",
+    description: "Crea interfaces intuitivas y atractivas.",
+    imageUrl: "https://placehold.co/600x400/9b59b6/ffffff?text=Diseño+UX",
+    progress: 0,
+  },
+];
+
+const testimonials = [
+  {
+    name: "María González",
+    role: "Desarrolladora Frontend",
+    image: "https://placehold.co/100x100/3498db/ffffff?text=MG",
+    text: "Los cursos de EduPlat transformaron mi carrera. En solo 6 meses pasé de ser principiante a conseguir mi primer trabajo como desarrolladora.",
+  },
+  {
+    name: "Roberto Sánchez",
+    role: "Analista de Datos",
+    image: "https://placehold.co/100x100/2ecc71/ffffff?text=RS",
+    text: "La calidad del contenido y el soporte de los instructores es excepcional. Recomiendo EduPlat a cualquiera que quiera aprender programación.",
+  },
+  {
+    name: "Laura Martínez",
+    role: "Diseñadora UX/UI",
+    image: "https://placehold.co/100x100/9b59b6/ffffff?text=LM",
+    text: "Gracias a EduPlat pude especializarme en diseño UX/UI y ahora trabajo para una empresa internacional. ¡Inversión que vale la pena!",
+  },
+];
+
+const stats = [
+  { number: "10,000+", label: "Estudiantes" },
+  { number: "50+", label: "Cursos" },
+  { number: "95%", label: "Satisfacción" },
+  { number: "24/7", label: "Soporte" },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>EduPlat - Tu Plataforma de Aprendizaje Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+    <Navigation />
+
+    <main class="flex-grow">
+      <!-- Hero Section con CTA más llamativo -->
+      <section
+        class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20"
+      >
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            >
+              Aprende a tu ritmo, <span class="text-yellow-300"
+                >en cualquier lugar</span
+              >
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100">
+              Accede a cursos de alta calidad y desarrolla nuevas habilidades
+              con nuestros expertos.
+              <span class="font-semibold">¡Impulsa tu carrera hoy mismo!</span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href="/cursos"
+                class="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg hover:bg-blue-50 transition duration-200 text-lg shadow-lg hover:shadow-xl"
+              >
+                Explorar Cursos
+              </a>
+              <a
+                href="/register"
+                class="bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white/10 transition duration-200 text-lg"
+              >
+                Registrarse Gratis
+              </a>
+            </div>
+            <div class="mt-8 flex justify-center">
+              <div class="flex items-center space-x-2 text-sm text-blue-100">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Acceso inmediato a todos los cursos</span>
+              </div>
+              <div
+                class="flex items-center space-x-2 text-sm text-blue-100 ml-4"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span>Certificados al completar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Estadísticas -->
+      <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {
+              stats.map((stat) => (
+                <div class="text-center">
+                  <p class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+                    {stat.number}
+                  </p>
+                  <p class="text-gray-600">{stat.label}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Beneficios -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            ¿Por qué elegir EduPlat?
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Aprende a tu ritmo</h3>
+              <p class="text-gray-600">
+                Accede a los cursos cuando quieras y avanza según tu
+                disponibilidad. Sin presiones ni fechas límite.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">
+                Certificados reconocidos
+              </h3>
+              <p class="text-gray-600">
+                Obtén certificados que respaldan tus habilidades y aumentan tu
+                valor en el mercado laboral.
+              </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Comunidad activa</h3>
+              <p class="text-gray-600">
+                Únete a una comunidad de estudiantes y profesionales que
+                comparten tus mismos intereses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cursos Destacados -->
+      <section class="py-16">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Cursos Destacados</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explora nuestra selección de cursos más populares y comienza tu
+              viaje de aprendizaje hoy mismo.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredCourses.map((course) => <CourseCard {...course} />)}
+          </div>
+          <div class="text-center mt-10">
+            <a
+              href="/cursos"
+              class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-200"
+            >
+              Ver Todos los Cursos
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonios -->
+      <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12">
+            Lo que dicen nuestros estudiantes
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {
+              testimonials.map((testimonial) => (
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <div class="flex items-center mb-4">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      class="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <h3 class="font-semibold">{testimonial.name}</h3>
+                      <p class="text-sm text-gray-600">{testimonial.role}</p>
+                    </div>
+                  </div>
+                  <p class="text-gray-700">"{testimonial.text}"</p>
+                  <div class="mt-4 flex text-yellow-400">
+                    {[...Array(5)].map(() => (
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Final -->
+      <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-3xl font-bold mb-6">
+            ¿Listo para comenzar tu viaje de aprendizaje?
+          </h2>
+          <p class="text-xl mb-8 max-w-3xl mx-auto">
+            Únete a miles de estudiantes que ya están transformando sus carreras
+            con EduPlat.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="/register"
+              class="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg hover:bg-blue-50 transition duration-200 text-lg"
+            >
+              Comienza Gratis
+            </a>
+            <a
+              href="/cursos"
+              class="bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white/10 transition duration-200 text-lg"
+            >
+              Explorar Cursos
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-8">
+              <h2 class="text-3xl font-bold mb-4">Contáctanos</h2>
+              <p class="text-gray-600">
+                ¿Tienes preguntas? Nuestro equipo está aquí para ayudarte.
+              </p>
+            </div>
+            <form class="space-y-6">
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Mensaje</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  required></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-200"
+              >
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
 </html>

@@ -1,0 +1,294 @@
+---
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/global.css";
+import courseDataJson from "../../data/courseData.json";
+
+interface Lesson {
+  title: string;
+  status: string;
+}
+
+interface Week {
+  week: number;
+  title: string;
+  status: string;
+  lessons: Lesson[];
+}
+
+// Función para generar las rutas estáticas
+export function getStaticPaths() {
+  // Generamos rutas estáticas para cada curso en el archivo JSON
+  return courseDataJson.courses.map((course: { slug: string }) => ({
+    params: { slug: course.slug },
+  }));
+}
+
+// Obtenemos el curso actual basado en el slug
+const { slug } = Astro.params;
+const currentCourse = courseDataJson.courses.find(
+  (course: { slug: string }) => course.slug === slug
+);
+
+// Si no se encuentra el curso, redirigimos a la página 404
+if (!currentCourse) {
+  return Astro.redirect("/404");
+}
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{currentCourse.title} - EduPlat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+    <Navigation isLoggedIn={true} />
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <!-- Cabecera del curso -->
+        <div class="relative">
+          <img
+            src={currentCourse.imageUrl}
+            alt={`[Imagen de ${currentCourse.title}]`}
+            class="w-full h-64 object-cover"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end"
+          >
+            <div class="p-6 text-white">
+              <h1 class="text-3xl font-bold mb-2">{currentCourse.title}</h1>
+              <p class="text-lg">Por {currentCourse.instructor}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6">
+          <!-- Información del curso -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h3 class="text-lg font-semibold mb-2">Progreso</h3>
+              <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                <div
+                  class="bg-green-500 h-4 rounded-full"
+                  style={`width: ${currentCourse.progress}%`}
+                >
+                </div>
+              </div>
+              <p class="text-sm text-gray-600">
+                {currentCourse.progress}% completado
+              </p>
+              <p class="text-xs text-gray-500 mt-1">
+                {currentCourse.completedLessons} de {currentCourse.totalLessons}
+                lecciones
+              </p>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h3 class="text-lg font-semibold mb-2">Detalles</h3>
+              <ul class="space-y-1 text-sm">
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Duración:</span>
+                  <span class="font-medium">{currentCourse.duration}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Nivel:</span>
+                  <span class="font-medium">{currentCourse.level}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Categoría:</span>
+                  <span class="font-medium">{currentCourse.category}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Precio:</span>
+                  <span class="font-medium">{currentCourse.price}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h3 class="text-lg font-semibold mb-2">Estadísticas</h3>
+              <ul class="space-y-1 text-sm">
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Calificación:</span>
+                  <span class="font-medium">{currentCourse.rating}/5.0</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Estudiantes:</span>
+                  <span class="font-medium">{currentCourse.students}</span>
+                </li>
+                <li class="flex justify-between">
+                  <span class="text-gray-600">Actualizado:</span>
+                  <span class="font-medium">{currentCourse.lastUpdated}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Descripción -->
+          <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Descripción</h2>
+            <p class="text-gray-700">{currentCourse.description}</p>
+          </div>
+
+          <!-- Lo que aprenderás -->
+          <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Lo que aprenderás</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+              {
+                currentCourse.whatYouWillLearn.map((item: string) => (
+                  <li class="flex items-start">
+                    <svg
+                      class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <!-- Requisitos -->
+          <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Requisitos</h2>
+            <ul class="list-disc pl-5 space-y-1">
+              {
+                currentCourse.requirements.map((req: string) => (
+                  <li class="text-gray-700">{req}</li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <!-- Contenido del curso -->
+          <div>
+            <h2 class="text-2xl font-semibold mb-4">Contenido del Curso</h2>
+            <div class="space-y-4">
+              {
+                currentCourse.curriculum.map((week: Week) => (
+                  <div class="border rounded-lg overflow-hidden border-gray-300">
+                    <div
+                      class={`p-4 flex justify-between items-center ${week.status === "bloqueado" ? "bg-gray-100 cursor-not-allowed" : "bg-blue-50 cursor-pointer hover:bg-blue-100 transition-colors duration-150"}`}
+                    >
+                      <h3 class="text-lg font-semibold text-blue-800">
+                        Semana {week.week}: {week.title}
+                      </h3>
+                      <div class="flex items-center space-x-2">
+                        {week.status === "disponible" && (
+                          <span class="text-xs font-medium text-green-800 bg-green-100 px-2 py-1 rounded-full">
+                            Disponible
+                          </span>
+                        )}
+                        {week.status === "bloqueado" && (
+                          <span class="text-xs font-medium text-gray-500 bg-gray-200 px-2 py-1 rounded-full">
+                            Bloqueado
+                          </span>
+                        )}
+                        {week.status === "disponible" && (
+                          <svg
+                            class="w-5 h-5 text-blue-700"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+
+                    {week.status !== "bloqueado" && (
+                      <ul class="divide-y divide-gray-200 bg-white">
+                        {week.lessons.map((lesson: Lesson) => (
+                          <li class="p-4 flex items-center justify-between hover:bg-gray-50 transition-colors duration-150">
+                            <div class="flex items-center space-x-3">
+                              {lesson.status === "completado" && (
+                                <svg
+                                  class="w-5 h-5 text-green-500 flex-shrink-0"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"
+                                  />
+                                </svg>
+                              )}
+                              {lesson.status === "pendiente" && (
+                                <svg
+                                  class="w-5 h-5 text-gray-400 flex-shrink-0"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                  />
+                                </svg>
+                              )}
+                              <a
+                                href="#"
+                                class={`text-blue-600 hover:underline ${lesson.status === "completado" ? "line-through text-gray-500" : ""}`}
+                              >
+                                {lesson.title}
+                              </a>
+                            </div>
+                            <button
+                              class="text-xs text-gray-500 hover:text-blue-600"
+                              title={
+                                lesson.status === "completado"
+                                  ? "Marcar como pendiente"
+                                  : "Marcar como completada"
+                              }
+                            >
+                              {lesson.status === "completado" ? "✏️" : "✔️"}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {week.status === "bloqueado" && (
+                      <div class="p-4 text-sm text-gray-500">
+                        Este contenido se desbloqueará en la Semana {week.week}.
+                      </div>
+                    )}
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
